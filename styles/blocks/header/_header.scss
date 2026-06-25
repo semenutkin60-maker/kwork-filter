@@ -1,0 +1,46 @@
+@use '../../helpers' as *;
+
+.header {
+    background: var(--header-bg); 
+    backdrop-filter: blur(var(--header-blur)); 
+    -webkit-backdrop-filter: blur(var(--header-blur)); /* Для Safari */
+    border-bottom: 1px solid var(--header-border);
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(20);
+    }
+
+    &__body {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: rem(20) 0;
+
+        &-logo {
+            font-family: var(--font-family-title);
+            font-size: 1.4rem;
+        }
+
+        &-logo span {
+            color: var(--primary);
+        }
+    }
+
+    &__menu {
+        &-list {
+            display: flex;
+            gap: rem(30);
+        }
+
+        &-item {
+            .is-active {
+                color: var(--primary);
+                pointer-events: none; 
+            }
+        }
+    }
+}

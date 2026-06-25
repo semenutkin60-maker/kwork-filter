@@ -1,0 +1,56 @@
+@use 'helpers' as *;
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--color-text);
+    font-family: var(--font-family-base);
+}
+
+.container {
+    max-width: rem(1200);
+    margin: 0 auto;
+    padding: 0 rem(20);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    color: var(--color-text);
+    font-family: var(--font-family-title);
+}
+
+h1, .h1,
+h2, .h2 {
+    font-weight: 800;
+    font-family: var(--font-family-title);
+}
+
+h3, .h3 {
+    font-weight: 600;
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+    transition-duration: var(--transition-duration);
+    font-weight: 500;
+}
+
+a {
+    color: inherit;
+
+    @include hover {
+        color: var(--primary-hover);
+    }
+
+    &[class] {
+        text-decoration: none;
+    }
+}

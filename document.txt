@@ -1,0 +1,5 @@
+Устоновка sass ходы десйствий:
+    npm init -y
+    npm install --save-dev sass
+
+Запустить sass - npm run sass-watch

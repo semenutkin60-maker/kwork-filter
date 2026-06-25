@@ -1,0 +1,317 @@
+/* ==========================================================================
+   ПОДКЛЮЧЕНИЕ ЛОКАЛЬНЫХ ШРИФТОВ (.woff2)
+   ========================================================================== */
+
+/* Inter - Обычный (для основного текста) */
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Inter - Средний (для ссылок в меню) */
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Inter - Полужирный (для подзаголовков в карточках) */
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Plus Jakarta Sans - Жирный (для названий секций) */
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('../fonts/PlusJakartaSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Plus Jakarta Sans - Экстражирный (для главного заголовка) */
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('../fonts/PlusJakartaSans-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ
+   ========================================================================== */
+:root {
+    --primary: #2ecc71;
+    --primary-hover: #27ae60;
+    --bg-dark: #0f172a;       
+    --bg-card: #1e293b;       
+    --text-main: #f8fafc;     
+    --text-muted: #94a3b8;    
+    --border-color: #334155;  
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    /* Темно-синий полупрозрачный фон (в цвет вашего сайта, но чуть светлее) */
+    --header-bg: rgba(22, 33, 54, 0.65);
+    
+    /* Сила размытия (оставляем сочной, чтобы карточки плавно размывались) */
+    --header-blur: 12px;
+    
+    /* Едва заметная сине-голубая граница снизу шапки */
+    --header-border: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Заголовки */
+.hero h1, .section-title, .logo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #0f172a; 
+    padding: 14px 28px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(46, 204, 113, 0.3);
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+/* Шапка */
+.header {
+  /* Применяем переменные */
+  background: var(--header-bg); 
+  backdrop-filter: blur(var(--header-blur)); 
+  -webkit-backdrop-filter: blur(var(--header-blur)); /* Для Safari */
+  border-bottom: 1px solid var(--header-border); 
+  
+  /* Позиционирование (остается прежним) */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary);
+}
+
+/* Большой блок (Hero) */
+.hero {
+    padding: 100px 0 80px;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(46, 204, 113, 0.1) 0%, transparent 60%);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.2;
+}
+
+/* Секции общего назначения */
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+}
+
+/* Преимущества (Grid) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.feature-card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.feature-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Как это работает (Steps) */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.step-card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary);
+    color: #0f172a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
+}
+
+.step-card h3 {
+    margin-top: 10px;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.step-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Нижний призыв к действию */
+.cta-bottom {
+    text-align: center;
+    padding: 60px 0 100px;
+}
+
+/* Подвал */
+.footer {
+    background-color: var(--bg-dark);
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .header .container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    .nav-links {
+        gap: 20px;
+    }
+}

@@ -1,0 +1,25 @@
+@use 'helpers' as *; 
+
+:root {
+    --primary: #2ecc71;
+    --primary-hover: #27ae60;
+    --bg-dark: #0f172a;       /* Глубокий темно-синий/серый фон */
+    --bg-card: #1e293b;       /* Более светлый тон для карточек и шапки */
+    --color-text: #f8fafc;     /* Почти белый текст */
+    --description-text: #94a3b8; /* Приглушенный серый для описаний */
+    
+    --header-bg: rgba(22, 33, 54, 0.65);
+    --header-blur: 12px;
+    --header-border: var(--border-color);
+
+    --border-color: #334155;  /* Тонкие границы элементов */
+    --border-radius: #{rem(12)};
+
+    --transition-duration: 0.2s;
+    --transition: all 0.3s ease;
+
+    --container-width: #{rem(1200)};
+
+    --font-family-base: 'Inter', sans-serif;
+    --font-family-title: 'Plus Jakarta Sans', sans-serif;
+}

@@ -4,7 +4,7 @@
     background: var(--header-bg); 
     backdrop-filter: blur(var(--header-blur)); 
     -webkit-backdrop-filter: blur(var(--header-blur)); /* Для Safari */
-    border-bottom: 1px solid var(--header-border);
+    border-bottom: var(--border-color);
 
     &__inner {
         display: flex;

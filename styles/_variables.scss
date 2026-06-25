@@ -10,9 +10,8 @@
     
     --header-bg: rgba(22, 33, 54, 0.65);
     --header-blur: 12px;
-    --header-border: var(--border-color);
 
-    --border-color: #334155;  /* Тонкие границы элементов */
+    --border-color: 2px solid #334155;  /* Тонкие границы элементов */
     --border-radius: #{rem(12)};
 
     --transition-duration: 0.2s;

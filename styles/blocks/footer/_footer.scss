@@ -1,0 +1,12 @@
+@use '../../helpers' as *;
+
+.footer {
+    background-color: var(--bg-card);
+    padding-block: rem(30);
+    border-top: var(--border-color);
+
+    &__text {
+        text-align: center;
+        font-weight: 400;
+    }
+}

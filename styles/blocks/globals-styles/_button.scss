@@ -1,0 +1,19 @@
+@use '../../helpers' as *;
+
+.button {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;   
+    padding: rem(14) rem(28);
+    box-shadow: var(--box-shadow);
+    border: 2px solid transparent; 
+    transition: var(--transition); 
+
+    @include hover {
+        background-color: transparent;
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+}

@@ -1,0 +1,27 @@
+@use '../../helpers' as *;
+
+.hero {
+    padding: 100px 0 80px;background: radial-gradient(circle at top, rgba(46, 204, 113, 0.1) 0%, transparent 60%);
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: rem(24);
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__title {
+        font-size: rem(45);
+        letter-spacing: rem(-0.32);
+        line-height: 1.2;
+        width: rem(800);
+        text-align: center;
+    }
+}

@@ -3,6 +3,10 @@
 @use 'variables';
 @use 'normalize';
 
+@use 'blocks/globals-styles/button';
+
 @use 'blocks/header/header';
 
 @use 'blocks/footer/footer';
+
+@use 'blocks/hero/hero';

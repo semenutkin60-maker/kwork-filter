@@ -116,6 +116,7 @@ a[class] {
   --header-blur: 12px;
   --border-color: 2px solid #334155; /* Тонкие границы элементов */
   --border-radius: 0.75rem;
+  --box-shadow: 0 4px 14px rgba(46, 204, 113, 0.3);
   --transition-duration: 0.2s;
   --transition: all 0.3s ease;
   --container-width: 75rem;
@@ -274,6 +275,7 @@ label {
  */
 button {
   -webkit-tap-highlight-color: transparent;
+  border: none;
 }
 
 /**
@@ -325,6 +327,32 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+.button {
+  background-color: var(--primary);
+  color: var(--bg-dark);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  box-shadow: var(--box-shadow);
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+@media (any-hover: hover) {
+  .button:hover {
+    background-color: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+}
+@media (any-hover: none) {
+  .button:active {
+    background-color: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+}
+
 .header {
   background: var(--header-bg);
   backdrop-filter: blur(var(--header-blur));
@@ -368,6 +396,30 @@ svg * {
 .footer__text {
   text-align: center;
   font-weight: 400;
+}
+
+.hero {
+  padding: 100px 0 80px;
+  background: radial-gradient(circle at top, rgba(46, 204, 113, 0.1) 0%, transparent 60%);
+}
+.hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.hero__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__title {
+  font-size: 2.8125rem;
+  letter-spacing: -0.02rem;
+  line-height: 1.2;
+  width: 50rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

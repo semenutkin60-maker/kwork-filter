@@ -6,6 +6,19 @@
     -webkit-backdrop-filter: blur(var(--header-blur)); /* Для Safari */
     border-bottom: var(--border-color);
 
+    @include mobile-above {
+        &__burger-button {
+            display: none !important;
+        }
+    }
+
+    @include mobile {
+        &__burger-button {
+            @include square(rem(34));
+            color: var(--color-text); /* Белые линии на мобильных */
+        }
+    }
+
     &__inner {
         display: flex;
         align-items: center;
@@ -22,7 +35,7 @@
 
         &-logo {
             font-family: var(--font-family-title);
-            font-size: 1.4rem;
+            font-size: fluid(22.4, 18);
         }
 
         &-logo span {
@@ -43,4 +56,6 @@
             }
         }
     }
+
+    // &__
 }

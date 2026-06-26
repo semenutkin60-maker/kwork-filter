@@ -1,14 +1,19 @@
 @use '../../helpers' as *;
 
 .hero {
-    padding: 100px 0 80px;background: radial-gradient(circle at top, rgba(46, 204, 113, 0.1) 0%, transparent 60%);
+    padding: fluid(100, 80) 0 fluid(80, 60);
+    background: radial-gradient(circle at top, rgba(46, 204, 113, 0.1) 0%, transparent 60%);
+
+    @include tablet {
+        padding: fluid(80, 50) 0 fluid(60, 40);
+    }
 
     &__inner {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        row-gap: rem(24);
+        row-gap: fluid(24, 20);
     }
 
     &__body {
@@ -18,10 +23,19 @@
     }
 
     &__title {
-        font-size: rem(45);
+        font-size: fluid(45, 30);
         letter-spacing: rem(-0.32);
         line-height: 1.2;
         width: rem(800);
         text-align: center;
+
+        @include tablet {
+            width: rem(600);
+        }
+
+        @include mobile {
+            width: fluid(400, 360);
+            font-size: fluid(30, 20);
+        }
     }
 }

@@ -333,7 +333,7 @@ svg * {
   border-radius: var(--border-radius);
   font-size: 1rem;
   font-weight: 600;
-  padding: 0.875rem 1.75rem;
+  padding: clamp(0.5rem, 0.4134615385rem + 0.3846153846vw, 0.875rem) clamp(1.25rem, 1.1346153846rem + 0.5128205128vw, 1.75rem);
   box-shadow: var(--box-shadow);
   border: 2px solid transparent;
   transition: var(--transition);
@@ -359,6 +359,18 @@ svg * {
   -webkit-backdrop-filter: blur(var(--header-blur)); /* Для Safari */
   border-bottom: var(--border-color);
 }
+@media (width > 47.99875rem) {
+  .header__burger-button {
+    display: none !important;
+  }
+}
+@media (width <= 47.99875rem) {
+  .header__burger-button {
+    width: 2.125rem;
+    height: 2.125rem;
+    color: var(--color-text); /* Белые линии на мобильных */
+  }
+}
 .header__inner {
   display: flex;
   align-items: center;
@@ -374,7 +386,7 @@ svg * {
 }
 .header__body-logo {
   font-family: var(--font-family-title);
-  font-size: 1.4rem;
+  font-size: clamp(1.125rem, 1.0615384615rem + 0.2820512821vw, 1.4rem);
 }
 .header__body-logo span {
   color: var(--primary);
@@ -399,15 +411,20 @@ svg * {
 }
 
 .hero {
-  padding: 100px 0 80px;
+  padding: clamp(5rem, 4.7115384615rem + 1.2820512821vw, 6.25rem) 0 clamp(3.75rem, 3.4615384615rem + 1.2820512821vw, 5rem);
   background: radial-gradient(circle at top, rgba(46, 204, 113, 0.1) 0%, transparent 60%);
+}
+@media (width <= 63.99875rem) {
+  .hero {
+    padding: clamp(3.125rem, 2.6923076923rem + 1.9230769231vw, 5rem) 0 clamp(2.5rem, 2.2115384615rem + 1.2820512821vw, 3.75rem);
+  }
 }
 .hero__inner {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  row-gap: 1.5rem;
+  row-gap: clamp(1.25rem, 1.1923076923rem + 0.2564102564vw, 1.5rem);
 }
 .hero__body {
   display: flex;
@@ -415,11 +432,22 @@ svg * {
   justify-content: center;
 }
 .hero__title {
-  font-size: 2.8125rem;
+  font-size: clamp(1.875rem, 1.6586538462rem + 0.9615384615vw, 2.8125rem);
   letter-spacing: -0.02rem;
   line-height: 1.2;
   width: 50rem;
   text-align: center;
+}
+@media (width <= 63.99875rem) {
+  .hero__title {
+    width: 37.5rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__title {
+    width: clamp(22.5rem, 21.9230769231rem + 2.5641025641vw, 25rem);
+    font-size: clamp(1.25rem, 1.1057692308rem + 0.641025641vw, 1.875rem);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

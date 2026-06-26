@@ -1,0 +1,61 @@
+@use '../../helpers' as *;
+
+.burger-button {
+    width: rem(34);
+    height: rem(34);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: rem(8.5) rem(4.25);
+    
+    /* ЯВНО задаем белый цвет */
+    color: #ffffff;
+    
+    /* Еле заметный фон, чтобы видеть кнопку */
+    background-color: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: rem(6);
+    cursor: pointer;
+    transition: var(--transition);
+    box-sizing: border-box;
+
+    @include hover {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    &.is-active {
+        .burger-button__line {
+            &:first-child {
+                rotate: 45deg;
+                transform-origin: 0;
+                translate: 0.25em -0.1em;
+            }
+
+            &:nth-child(2) {
+                rotate: -45deg;
+            }
+
+            &:last-child {
+                width: 0;
+            }
+        }
+    }
+
+    &__line {
+        display: block;
+        width: 100%;
+        height: rem(2);
+        
+        /* ЯВНО белый цвет, а не currentColor */
+        background-color: #ffffff;
+        border-radius: 1rem;
+        transition: var(--transition);
+        flex-shrink: 0;
+
+        &:last-child {
+            align-self: end;
+            width: 55%;
+        }
+    }
+}

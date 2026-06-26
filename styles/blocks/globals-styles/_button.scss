@@ -6,7 +6,7 @@
     border-radius: var(--border-radius);
     font-size: 1rem;
     font-weight: 600;   
-    padding: rem(14) rem(28);
+    padding: fluid(14, 8) fluid(28, 20);
     box-shadow: var(--box-shadow);
     border: 2px solid transparent; 
     transition: var(--transition); 

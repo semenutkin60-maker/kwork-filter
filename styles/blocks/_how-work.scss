@@ -1,0 +1,18 @@
+@use '../helpers' as *;
+
+.how-work {
+    margin: 0 auto;
+
+    &__title {
+        font-weight: 700;
+        font-size: fluid(35, 20);
+        margin-bottom: rem(50);
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: fluid(100, 35) 0;
+    }
+}

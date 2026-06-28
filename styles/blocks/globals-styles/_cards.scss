@@ -16,6 +16,7 @@
     }
 
     &__item {
+        position: relative;
         background-color: var(--bg-card);
         padding: fluid(30, 10);
         border-radius: var(--border-radius);
@@ -43,13 +44,30 @@
         &-title {
             font-size: fluid(19, 16);
             font-weight: 600;
-            margin-bottom: fluid(10, 5);
             height: auto;
         }
 
         &-description {
+            margin-top: fluid(10, 5);
             color: var(--color-text);
             font-size: rem(15.2);
+        }
+
+        &-step-number {
+            @include square(rem(40));
+
+            background-color: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-dark);
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
         }
     }
 }

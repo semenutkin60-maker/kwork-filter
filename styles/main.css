@@ -370,6 +370,7 @@ svg * {
   }
 }
 .cards__item {
+  position: relative;
   background-color: var(--bg-card);
   padding: clamp(0.625rem, 0.3365384615rem + 1.2820512821vw, 1.875rem);
   border-radius: var(--border-radius);
@@ -403,12 +404,28 @@ svg * {
 .cards__item-title {
   font-size: clamp(1rem, 0.9567307692rem + 0.1923076923vw, 1.1875rem);
   font-weight: 600;
-  margin-bottom: clamp(0.3125rem, 0.2403846154rem + 0.3205128205vw, 0.625rem);
   height: auto;
 }
 .cards__item-description {
+  margin-top: clamp(0.3125rem, 0.2403846154rem + 0.3205128205vw, 0.625rem);
   color: var(--color-text);
   font-size: 0.95rem;
+}
+.cards__item-step-number {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-dark);
+  font-weight: 800;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
 }
 
 .indentations {
@@ -510,6 +527,21 @@ svg * {
 .advantages__title {
   font-weight: 700;
   font-size: clamp(1.25rem, 1.0336538462rem + 0.9615384615vw, 2.1875rem);
+}
+
+.how-work {
+  margin: 0 auto;
+}
+.how-work__title {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.0336538462rem + 0.9615384615vw, 2.1875rem);
+  margin-bottom: 3.125rem;
+}
+.how-work__content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: clamp(2.1875rem, 1.25rem + 4.1666666667vw, 6.25rem) 0;
 }
 
 .footer {

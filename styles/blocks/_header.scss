@@ -1,6 +1,9 @@
 @use '../helpers' as *;
 
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background: var(--header-bg); 
     backdrop-filter: blur(var(--header-blur)); 
     -webkit-backdrop-filter: blur(var(--header-blur)); /* Для Safari */

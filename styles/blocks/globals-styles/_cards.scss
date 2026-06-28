@@ -1,0 +1,55 @@
+@use '../../helpers' as *;
+
+.cards {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: fluid(24, 15);
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile-s {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__item {
+        background-color: var(--bg-card);
+        padding: fluid(30, 10);
+        border-radius: var(--border-radius);
+        border: var(--border-color);
+        transition: var(--transition);
+
+        @include hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        &-wrapper {
+            display: flex;
+            gap: rem(20);
+            align-items: center;
+        }
+
+        &-icon {
+            font-size: fluid(40, 30);
+            margin-bottom: fluid(16, 14);
+            display: block;
+        }
+
+        &-title {
+            font-size: fluid(19, 16);
+            font-weight: 600;
+            margin-bottom: fluid(10, 5);
+            height: auto;
+        }
+
+        &-description {
+            color: var(--color-text);
+            font-size: rem(15.2);
+        }
+    }
+}

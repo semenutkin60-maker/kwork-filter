@@ -1,0 +1,14 @@
+@use '../helpers' as *;
+
+.advantages {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: fluid(50, 30);
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: fluid(35, 20);
+    }
+}

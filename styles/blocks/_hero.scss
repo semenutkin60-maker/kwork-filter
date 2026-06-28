@@ -34,8 +34,8 @@
         }
 
         @include mobile {
-            width: fluid(400, 360);
-            font-size: fluid(30, 20);
+            width: fluid(500, 360);
+            font-size: fluid(40, 20);
         }
     }
 }

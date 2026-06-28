@@ -4,9 +4,12 @@
 @use 'normalize';
 
 @use 'blocks/globals-styles/button';
+@use 'blocks/globals-styles/cards';
+@use 'blocks/globals-styles/indentations';
 
 @use 'blocks/header';
 
-@use 'blocks/footer';
-
 @use 'blocks/hero';
+@use 'blocks/advantages';
+
+@use 'blocks/footer';

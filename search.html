@@ -23,13 +23,29 @@
                     </ul>
                 </nav>
             </div>
-            <!-- <button class="header__burger-button burger-button" type="button" aria-label="Open menu" title="Open menu">
-                <span class="burger-button__line"></span>
-                <span class="burger-button__line"></span>
-                <span class="burger-button__line"></span>
-            </button> -->
         </div>
     </header>
+
+    <main class="container">
+        <section class="skills">
+            <h2 class="skills__title">Настройте фильтры для поиска</h2>
+            <form class="skills__form" onsubmit="event.preventDefault();">
+                <input type="text" class="skills__input" placeholder="Введите навыки через запятую (python, django, ...)">
+                <button type="submit" class="skills__btn-submit">Обновить</button>
+            </form>
+            <div class="skills__tags">
+                <span class="chip">#python <span class="chip__close">&times;</span></span>
+                <span class="chip">#django <span class="chip__close">&times;</span></span>
+                <span class="chip">#api <span class="chip__close">&times;</span></span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner container">
+            <p class="footer__text">&copy; 2026 KworkFilter. Все права защищены.</p>
+        </div>
+    </footer>
 
     <script src="scripts/nav-list.js"></script>
 </body>

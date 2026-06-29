@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KworkFilter</title>
-
+    <title>KworkFilter — умный поиск заказов</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -15,7 +14,7 @@
                 <nav class="header__menu">
                     <ul class="header__menu-list">
                         <li class="header__menu-item">
-                            <a href="/" class="header__menu-link">Главная</a>
+                            <a href="/" class="header__menu-link is-active">Главная</a>
                         </li>
                         <li class="header__menu-item">
                             <a href="search.html" class="header__menu-link">Поиск заказов</a>
@@ -23,35 +22,29 @@
                     </ul>
                 </nav>
             </div>
-            <!-- <button class="header__burger-button burger-button" type="button" aria-label="Open menu" title="Open menu">
-                <span class="burger-button__line"></span>
-                <span class="burger-button__line"></span>
-                <span class="burger-button__line"></span>
-            </button> -->
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero scroll-animate">
             <div class="hero__inner container">
                 <div class="hero__body">
                     <h1 class="hero__title">KworkFilter — автоматический поиск заказов на Kwork.ru</h1>
                 </div>
-                <!-- поиск заказов на Kwork.ru -->
                 <button class="hero__button button" type="button">
-                    <a href="#" class="hero__button-link">Найти заказы</a>
+                    <a href="search.html" class="hero__button-link">Найти заказы</a>
                 </button>
             </div>
         </section>
 
-        <section class="advantages indentations">
+        <section class="advantages indentations scroll-animate scroll-animate--delay-1">
             <div class="advantages__inner container">
                 <div class="advantages__info">
                     <h2 class="advantages__title">Преимущества</h2>
                 </div>
                 <div class="advantages__cards cards">
                     <ul class="cards__list">
-                        <li class="cards__item">
+                        <li class="cards__item cards__animation">
                             <div class="cards__item-wrapper">
                                 <span class="cards__item-icon">🎯</span>
                                 <h3 class="cards__item-title">Только нужные заказы</h3>
@@ -60,7 +53,7 @@
                                 <p>Система сама отсеивает спам и мусор. Вы видите только те проекты, которые подходят под ваши навыки.</p>
                             </div>
                         </li>
-                        <li class="cards__item">
+                        <li class="cards__item cards__animation">
                             <div class="cards__item-wrapper">
                                 <span class="cards__item-icon">⚡</span>
                                 <h3 class="cards__item-title">Заказы сами ищут вас</h3>
@@ -69,7 +62,7 @@
                                 <p>Больше не нужно сидеть на сайте и бесконечно обновлять страницу. Мы делаем это за вас каждые несколько секунд.</p>
                             </div>
                         </li>
-                        <li class="cards__item">
+                        <li class="cards__item cards__animation">
                             <div class="cards__item-wrapper">
                                 <span class="cards__item-icon">🔄</span>
                                 <h3 class="cards__item-title">Мгновенные уведомления</h3>
@@ -78,7 +71,7 @@
                                 <p>Как только заказчик публикует проект, вы тут же узнаете о нем. Никаких задержек.</p>
                             </div>
                         </li>
-                        <li class="cards__item">
+                        <li class="cards__item cards__animation">
                             <div class="cards__item-wrapper">
                                 <span class="cards__item-icon">💰</span>
                                 <h3 class="cards__item-title">Абсолютно бесплатно</h3>
@@ -92,51 +85,49 @@
             </div>
         </section>
 
-        <section class="how-work indentations">
+        <section class="how-work indentations scroll-animate scroll-animate--delay-2">
             <div class="how-work__inner container">
                 <div class="how-work__info">
                     <h2 class="how-work__title">Как это работает</h2>
                 </div>
                 <div class="how-work__cell cards">
                     <ul class="how-work__list cards__list">
-                        <li class="cards__item">
+                        <li class="cards__item cards__animation">
                             <div class="cards__item-step-number">1</div>
-                            <h3 class="cards_item-title">Настройте фильтры</h3>
+                            <h3 class="cards__item-title">Настройте фильтры</h3>
                             <div class="cards__item-description">
                                 <p>Укажите ключевые слова, категории и желаемый бюджет.</p>
                             </div>
                         </li>
-                        <li class="cards__item">
+                        <li class="cards__item cards__animation">
                             <div class="cards__item-step-number">2</div>
-                            <h3 class="cards_item-title">Запустите поиск</h3>
+                            <h3 class="cards__item-title">Запустите поиск</h3>
                             <div class="cards__item-description">
                                 <p>Система начнет анализировать новые ленты Kwork.</p>
                             </div>
                         </li>
-                        <li class="cards__item">
+                        <li class="cards__item cards__animation">
                             <div class="cards__item-step-number">3</div>
-                            <h3 class="cards_item-title">Получайте заказы</h3>
+                            <h3 class="cards__item-title">Получавайте заказы</h3>
                             <div class="cards__item-description">
                                 <p>Моментально узнавайте о самых свежих и выгодных предложениях.</p>
                             </div>
                         </li>
-                        <li class="cards__item">
+                        <li class="cards__item cards__animation">
                             <div class="cards__item-step-number">4</div>
-                            <h3 class="cards_item-title">Откликайтесь первым</h3>
+                            <h3 class="cards__item-title">Откликайтесь первым</h3>
                             <div class="cards__item-description">
                                 <p>Опережайте конкурентов и забирайте лучшие проекты в работу.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
-
                 <div class="how-work__content">
                     <button class="how-work__button button" type="button">
-                        <a href="#" class="how-work__button-link">Найти заказы</a>
+                        <a href="search.html" class="how-work__button-link">Найти заказы</a>
                     </button>
                 </div>
             </div>
-            
         </section>
     </main>
 
@@ -147,5 +138,6 @@
     </footer>
 
     <script src="scripts/nav-list.js"></script>
+    <script src="scripts/ScrollAnimator.js"></script>
 </body>
 </html>

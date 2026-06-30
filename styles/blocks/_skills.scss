@@ -1,0 +1,45 @@
+@use '../helpers' as *;
+
+.skills {
+    margin-bottom: 35px;
+
+    &__title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    &__form {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+    &__input {
+        flex: 1;
+        background-color: var(--bg-card);
+        border: var(--border-color);
+        border-radius: 12px;
+        padding: 16px 20px;
+        color: var(--color-text);
+        font-size: 15px;
+
+        &:focus {
+            border-color: var(--primary);
+        }
+
+        &::placeholder {
+            color: var(--description-text);
+        }
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

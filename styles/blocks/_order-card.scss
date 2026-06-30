@@ -1,0 +1,69 @@
+@use '../helpers' as *;
+
+.order-card {
+    background-color: var(--bg-card);
+    border: var(--border-color);
+    border-left: 4px solid var(--primary);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    transition: var(--transition);
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--box-shadow);
+        border-left-color: var(--primary-hover);
+    }
+
+    &__main {
+        flex: 1;
+    }
+
+    &__title {
+        font-size: 18px;
+        margin: 0 0 8px 0;
+    }
+
+    &__category {
+        color: var(--description-text);
+        font-size: 14px;
+        margin: 0 0 12px 0;
+    }
+
+    &__match {
+        color: var(--primary);
+        font-size: 14px;
+    }
+
+    &__side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 12px;
+        min-width: 160px;
+    }
+
+    &__price {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--primary);
+        font-family: var(--font-family-title);
+    }
+
+    &__btn-go {
+        color: var(--color-text);
+        text-decoration: none;
+        font-size: 14px;
+        border-bottom: 1px dashed var(--description-text);
+        padding-bottom: 2px;
+
+        &:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+    }
+}

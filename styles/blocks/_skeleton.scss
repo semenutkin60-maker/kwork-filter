@@ -1,0 +1,57 @@
+@use '../helpers' as *;
+
+.skeleton-line {
+    background: rgba(148, 163, 184, 0.08);
+    border-radius: 6px;
+    animation: skeleton-pulse 1.5s infinite ease-in-out;
+
+    &--title {
+        width: 65%;
+        height: 22px;
+        margin-bottom: 12px;
+    }
+
+    &--text {
+        width: 45%;
+        height: 14px;
+        margin-bottom: 16px;
+    }
+
+    &--match {
+        width: 150px;
+        height: 14px;
+    }
+
+    &--price {
+        width: 110px;
+        height: 26px;
+    }
+
+    &--btn {
+        width: 130px;
+        height: 16px;
+    }
+
+    @media (max-width: 768px) {
+        &--title {
+            width: 85%;
+        }
+
+        &--text {
+            width: 65%;
+        }
+    }
+}
+
+/* --- АНИМАЦИЯ СКЕЛЕТОНА --- */
+@keyframes skeleton-pulse {
+    0% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}

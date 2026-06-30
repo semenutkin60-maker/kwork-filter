@@ -14,7 +14,8 @@ body {
 }
 
 main {
-    flex-grow: 1;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .container {
@@ -63,5 +64,17 @@ a {
 
     &[class] {
         text-decoration: none;
+    }
+}
+
+/* Глобально убираем обводку у всех полей ввода */
+input,
+textarea,
+select {
+    outline: none;
+    
+    &:focus {
+        outline: none;
+        box-shadow: none;
     }
 }

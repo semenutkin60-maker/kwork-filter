@@ -26,19 +26,101 @@
         </div>
     </header>
 
-    <main class="container">
-        <section class="skills">
-            <h2 class="skills__title">Настройте фильтры для поиска</h2>
-            <form class="skills__form" onsubmit="event.preventDefault();">
-                <input type="text" class="skills__input" placeholder="Введите навыки через запятую (python, django, ...)">
-                <button type="submit" class="skills__btn-submit">Обновить</button>
-            </form>
-            <div class="skills__tags">
-                <span class="chip">#python <span class="chip__close">&times;</span></span>
-                <span class="chip">#django <span class="chip__close">&times;</span></span>
-                <span class="chip">#api <span class="chip__close">&times;</span></span>
-            </div>
-        </section>
+    <main>
+        <div class="container">
+            <!-- Блок навыков с анимацией -->
+            <section class="skills scroll-animate">
+                <h2 class="skills__title">Настройте фильтры для поиска</h2>
+                <form class="skills__form">
+                    <input type="text" class="skills__input" placeholder="Введите навыки через запятую (python, django, ...)">
+                    <button type="submit" class="skills__btn-submit button">Применить</button>
+                </form>
+                <div class="skills__tags">
+                    <span class="chip scroll-animate scroll-animate--delay-1">#python</span>
+                    <span class="chip scroll-animate scroll-animate--delay-2">#django</span>
+                    <span class="chip scroll-animate scroll-animate--delay-3">#api</span>
+                </div>
+            </section>
+
+            <!-- Блок фильтров с анимацией -->
+            <section class="filters scroll-animate scroll-animate--delay-1">
+                <div class="filters__row">
+                    <div class="filters__group">
+                        <span class="filters__label">От</span>
+                        <div class="filters__input-wrapper">
+                            <input type="text" class="filters__input" id="price-min" placeholder="Мин. цена, ₽">
+                            <div class="filters__spin-buttons">
+                                <button type="button" class="filters__spin-btn filters__spin-btn--up" onclick="changePrice('price-min', 500)">▲</button>
+                                <button type="button" class="filters__spin-btn filters__spin-btn--down" onclick="changePrice('price-min', -500)">▼</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Группа До -->
+                    <div class="filters__group">
+                        <span class="filters__label">До</span>
+                        <div class="filters__input-wrapper">
+                            <input type="text" class="filters__input" id="price-max" placeholder="Макс. цена, ₽">
+                            <div class="filters__spin-buttons">
+                                <button type="button" class="filters__spin-btn filters__spin-btn--up" onclick="changePrice('price-max', 500)">▲</button>
+                                <button type="button" class="filters__spin-btn filters__spin-btn--down" onclick="changePrice('price-max', -500)">▼</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="filters__btn-apply scroll-animate scroll-animate--delay-2">Применить фильтры</button>
+                </div>
+            </section>
+
+            <!-- Блок Результаты поиска (orders) -->
+            <section class="orders scroll-animate scroll-animate--delay-2">
+                <div class="orders__header">
+                    <h3 class="orders__title">Найденные заказы</h3>
+                    <span class="orders__counter">Всего: 142</span>
+                </div>
+
+                <div class="orders__list">
+                    <!-- Карточка заказа 1 -->
+                    <article class="order-card">
+                        <div class="order-card__main">
+                            <h4 class="order-card__title">Разработать API на Django Rest Framework</h4>
+                            <p class="order-card__category">Категория: Разработка сайтов / Программирование</p>
+                            <span class="order-card__match">⚡ Совпало навыков: 2 из 3</span>
+                        </div>
+                        <div class="order-card__side">
+                            <span class="order-card__price">15 000 ₽</span>
+                            <a href="#" class="order-card__btn-go">Перейти к заказу &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Карточка заказа 2 -->
+                    <article class="order-card">
+                        <div class="order-card__main">
+                            <h4 class="order-card__title">Скрипт для парсинга данных на чистом Python</h4>
+                            <p class="order-card__category">Категория: Скрипты и боты / Парсинг данных</p>
+                            <span class="order-card__match">⚡ Совпало навыков: 1 из 1</span>
+                        </div>
+                        <div class="order-card__side">
+                            <span class="order-card__price">5 000 ₽</span>
+                            <a href="#" class="order-card__btn-go">Перейти к заказу &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Карточка-Скелетон (состояние загрузки) -->
+                    <div class="order-card order-card--skeleton">
+                        <div class="order-card__main">
+                            <div class="skeleton-line skeleton-line--title"></div>
+                            <div class="skeleton-line skeleton-line--text"></div>
+                            <div class="skeleton-line skeleton-line--match"></div>
+                        </div>
+                        <div class="order-card__side">
+                            <div class="skeleton-line skeleton-line--price"></div>
+                            <div class="skeleton-line skeleton-line--btn"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer class="footer">
@@ -48,5 +130,6 @@
     </footer>
 
     <script src="scripts/nav-list.js"></script>
+    <script src="scripts/ScrollAnimator.js"></script>
 </body>
 </html>

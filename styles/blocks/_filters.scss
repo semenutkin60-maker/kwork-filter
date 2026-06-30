@@ -1,0 +1,141 @@
+@use '../helpers' as *;
+
+/* --- БЛОК ФИЛЬТРОВ --- */
+.filters {
+    margin-bottom: 45px;
+
+    &__row {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+    &__group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__label {
+        color: var(--description-text);
+        font-size: 15px;
+        font-weight: 500;
+        user-select: none;
+    }
+
+    &__input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    &__input {
+        background-color: var(--bg-card);
+        border: var(--border-color);
+        border-radius: 12px;
+        padding: 14px 45px 14px 20px;
+        color: var(--color-text);
+        width: 180px;
+        font-size: 14px;
+        transition: var(--transition);
+
+        /* Убираем стандартные стрелки браузера */
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none !important;
+            appearance: none !important;
+            margin: 0 !important;
+            display: none !important;
+        }
+
+        /* Для Firefox */
+        & {
+            -moz-appearance: textfield !important;
+            -webkit-appearance: none !important;
+            appearance: none !important;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        &::placeholder {
+            color: var(--description-text);
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    &__spin-buttons {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        gap: 2px;
+        z-index: 2;
+    }
+
+    &__spin-btn {
+        background: transparent !important;
+        border: none !important;
+        color: var(--description-text) !important;
+        font-size: 11px;
+        cursor: pointer;
+        padding: 2px 4px !important;
+        line-height: 1;
+        user-select: none;
+        box-shadow: none !important;
+        transition: transform var(--transition-duration) ease, color var(--transition-duration) ease;
+
+        &:hover {
+            color: var(--primary) !important;
+            transform: scale(1.2);
+        }
+
+        &--up {
+            margin-bottom: -2px;
+        }
+
+        &--down {
+            margin-top: -2px;
+        }
+    }
+
+    &__btn-apply {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        border-radius: 12px;
+        height: 48px;
+        padding: 0 25px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        white-space: nowrap;
+
+        &:hover {
+            background-color: var(--primary);
+            color: var(--bg-dark);
+        }
+
+        @media (max-width: 768px) {
+            padding: 14px 0;
+            height: auto;
+        }
+    }
+}
